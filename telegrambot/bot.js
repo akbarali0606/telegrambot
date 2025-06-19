@@ -1,8 +1,9 @@
 const TelegramBot = require("node-telegram-bot-api");
-require("dotenv").config();
+const keep_alive = require("./keep_alive");
 
-// Bot tokenini .env fayldan oling
-const token = process.env.TOKEN;
+// Bot tokenini to'g'ridan-to'g'ri kodga yozish
+// Eslatma: BU XAVFSIZ USUL EMAS VA TAVSIYA ETILMAYDI!
+const token = "7991412037:AAGi6EMWLnI92R5xZDOINWPQpz0PP_5FsVQ"; // <<< O'zingizning bot tokeningizni bu yerga joylashtiring
 
 // Botni ishga tushirish
 const bot = new TelegramBot(token, { polling: true });
@@ -26,6 +27,8 @@ bot.on("message", (msg) => {
           ],
         ],
       },
-    }
+    },
   );
 });
+
+console.log("Bot ishga tushdi..."); // Bot ishga tushganini bildirish uchun
